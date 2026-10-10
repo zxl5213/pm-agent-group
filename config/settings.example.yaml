@@ -1,0 +1,38 @@
+feishu:
+  # AI项目经理应用（用于tenant_access_token和机器人入群）
+  app_id: "cli_xxxxxxxxxxxxxxxx"
+  app_secret: "your_app_secret_here"
+  api_base: "https://open.feishu.cn/open-apis"
+  # 通讯录搜索所需的 user_access_token（从环境变量读取）
+  token_env_var: "LARKSUITE_CLI_USER_ACCESS_TOKEN"
+
+bitable:
+  # F-01项目配置Base（多维表格 app_token）
+  f01_app_token: "your_f01_base_app_token"
+  f01_tables:
+    project_config: "tblXXXXXXXXXXXXXX"      # 表A：项目配置表
+    project_members: "tblXXXXXXXXXXXXXX"     # 表B+C：成员管理表
+    archive_log: "tblXXXXXXXXXXXXXX"         # 表D：归档日志表
+
+scheduler:
+  message_fetch_interval: 60
+  daily_summary_time: "20:00"
+  weekly_summary_day: 1
+  weekly_summary_time: "09:00"
+  notification_check_interval: 300
+
+member_confirm:
+  timeout_minutes: 30  # PM未操作时自动认可成员的超时时间（分钟）
+
+storage:
+  data_dir: "data"
+  sqlite_path: "data/pm_agent.db"
+  log_dir: "logs"
+
+graceful_shutdown:
+  max_wait_seconds: 600
+  check_interval: 10
+
+webhook:
+  port: 8080
+  host: "0.0.0.0"
